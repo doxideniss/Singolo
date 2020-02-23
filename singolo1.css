@@ -97,6 +97,11 @@ h2 {
 	color: #fff;
 	font-size: 12px;
 	font-weight: 700;
+	transition: color .3s;
+}
+
+.nav__link:hover {
+	color: #f06c64;
 }
 
 .slider{
@@ -123,12 +128,19 @@ h2 {
 
 .btn-left,
 .btn-right {
+	cursor: pointer;
 	position: absolute;
 	width: 16px;
 	height: 26px;
 	top: 49.5%;
 	transform: translateY(-50%);
 	opacity: 0.2;
+	transition: opacity 0.3s; 
+}
+
+.btn-left:hover,
+.btn-right:hover {
+	opacity: 1;
 }
 
 .btn-left {
@@ -195,4 +207,13 @@ h2 {
 .services-item__content p {
 	line-height: 22px;
 	font-weight: 400;
+}
+
+@keyframes arrows {
+	0% {
+		opacity: 0.2;
+	}
+	100% {
+		opacity: 1;
+	}
 }
