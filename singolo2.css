@@ -153,17 +153,17 @@ h2 {
 }
 
 .ico_fb {
-	background-image: url('./assets/socials/facebook.png');
+	background-image: url('assets/img/socials/facebook.png');
 }
 
 .ico_google {
-	background-image: url('./assets/socials/google+.png');
+	background-image: url('assets/img/socials/google+.png');
 }
 
 .ico_linkedin {
-	background-image: url('./assets/socials/linkedin.png');
+	background-image: url('assets/img/socials/linkedin.png');
 }
 
 .ico_twitter {
-	background-image: url('./assets/socials/twitter.png');
+	background-image: url('assets/img/socials/twitter.png');
 }
