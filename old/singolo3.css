@@ -155,13 +155,13 @@ h2 {
 }
 
 .icon-contact_map {
-	background-image: url('assets/img/contact/location.png');
+	background-image: url('../assets/img/contact/location.png');
 }
 .icon-contact_phone {
-	background-image: url('assets/img/contact/phone.png');
+	background-image: url('../assets/img/contact/phone.png');
 }
 .icon-contact_mail {
-	background-image: url('assets/img/contact/mail.png');
+	background-image: url('../assets/img/contact/mail.png');
 }
 
 .footer {
@@ -203,17 +203,17 @@ h2 {
 }
 
 .ico_fb {
-	background-image: url('assets/img/socials/facebook.png');
+	background-image: url('../assets/img/socials/facebook.png');
 }
 
 .ico_google {
-	background-image: url('assets/img/socials/google+.png');
+	background-image: url('../assets/img/socials/google+.png');
 }
 
 .ico_linkedin {
-	background-image: url('assets/img/socials/linkedin.png');
+	background-image: url('../assets/img/socials/linkedin.png');
 }
 
 .ico_twitter {
-	background-image: url('assets/img/socials/twitter.png');
+	background-image: url('../assets/img/socials/twitter.png');
 }

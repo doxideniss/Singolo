@@ -5,14 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Singolo</title>
-
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./singolo.css">
 </head>
 
 <body>
 
-<header class="header">
+<header id="home" class="header">
     <div class="container">
         <div class="header__wrapper">
             <div class="header__logo">
@@ -22,11 +21,11 @@
             </div>
             <nav class="nav">
                 <ul class="nav__list">
-                    <li class="nav__item nav__item_active"><a href="#" class="nav__link">HOME</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">SERVICES</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">PORTFOLIO</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">ABOUT</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">CONTACT</a></li>
+                    <li class="nav__item nav__item_active"><a href="#home" class="nav__link">HOME</a></li>
+                    <li class="nav__item"><a href="#services" class="nav__link">SERVICES</a></li>
+                    <li class="nav__item"><a href="#portfolio" class="nav__link">PORTFOLIO</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">ABOUT</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">CONTACT</a></li>
                 </ul>
             </nav>
         </div>
@@ -46,7 +45,7 @@
     </div>
 </section>
 
-<section class="services">
+<section id="services" class="services">
     <div class="container">
         <h2 class="services__title">Our Services</h2>
         <p class="services__desc">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non
@@ -122,7 +121,7 @@
         </div>
     </div>
 </section>
-<section class="portfolio">
+<section id="portfolio" class="portfolio">
     <div class="container">
         <h2 class="portfolio__title">Portfolio</h2>
         <p class="portfolio__desc">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio
@@ -174,7 +173,7 @@
         </div>
     </div>
 </section>
-<section class="aboutus">
+<section id="about" class="aboutus">
     <div class="container">
         <h2 class="aboutus__title">About Us</h2>
         <p class="aboutus__desc">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non
@@ -229,7 +228,7 @@
     </div>
 </section>
 
-<section class="quote">
+<section id="contact" class="quote">
     <div class="container">
         <h2 class="quote__title">Get a Quote</h2>
         <p class="quote__text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non
@@ -284,7 +283,7 @@
     </div>
 </footer>
 
-<script></script>
+<script src="index.js"></script>
 </body>
 
 </html>

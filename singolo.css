@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
@@ -39,6 +43,9 @@ h2 {
   background-color: #2d303a;
   text-align: center;
   color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .header__wrapper {
@@ -46,6 +53,11 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: height 0.3s;
+}
+
+.header__wrapper_small {
+  height: 50px;
 }
 
 .logo {
@@ -272,7 +284,7 @@ h2 {
 }
 
 .portfolios {
-  height: 601px;
+  height: 613px;
   overflow: hidden;
 }
 
@@ -282,6 +294,11 @@ h2 {
 
 .portfolios__item {
   margin-bottom: 20px;
+}
+
+.portfolios__item_active {
+  outline: 5px solid #F06C64;
+  outline-offset: -5px;
 }
 
 .aboutus {
@@ -383,14 +400,9 @@ h2 {
   margin-bottom: 16px;
 }
 
-.quote__form button {
-  display: none;
-}
-
 .quote__contact {
   width: 100%;
 }
-
 .contact-inf__title {
   font-size: 18px;
   line-height: 18px;
