@@ -141,12 +141,12 @@ h2 {
 
 .btn-left {
 	left: 2px;
-	background-image: url(../assets/img/slider/main/arrow-left.png);
+	background-image: url(../src/assets/img/slider/main/arrow-left.png);
 }
 
 .btn-right {
 	right: 0;
-	background-image: url(../assets/img/slider/main/arrow-right.png);
+	background-image: url(../src/assets/img/slider/main/arrow-right.png);
 }
 
 .services {
