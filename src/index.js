@@ -18,23 +18,24 @@ window.onload = () => {
 const siteScroll = () => {
   document.addEventListener('scroll', (e) => {
     let header = document.querySelector('.header__wrapper')
-    pageYOffset > 450 ? header.classList.add('header__wrapper_small') : header.classList.remove('header__wrapper_small')
+    let curPos = pageYOffset
+    let links = document.querySelectorAll('.nav__link')
+
+    curPos > 450 ? header.classList.add('header__wrapper_small') : header.classList.remove('header__wrapper_small')
+
+    document.querySelectorAll('[id]').forEach(x => {
+      if (x.offsetTop - x.offsetHeight*0.3 <= curPos && x.offsetTop + x.offsetHeight*0.7 > curPos) {
+        document.querySelector('.nav__item_active').classList.remove('nav__item_active')
+        document.querySelector(`[href="#${x.id}"]`).parentElement.classList.add('nav__item_active')
+      }
+    })
   })
 }
 
-const setPortfolios = (container, arr) => {
-  container.innerHTML = arr.map(x => x.outerHTML).join('')
-}
-
-const suffleArr = (arr) => {
-  let j, temp;
-  for(let i = arr.length - 1; i > 0; i--){
-    j = Math.floor(Math.random()*(i + 1));
-    temp = arr[j];
-    arr[j] = arr[i];
-    arr[i] = temp;
+const shuffleDomEl = (parentNode) => {
+  for (let i = parentNode.children.length; i >= 0; i--) {
+    parentNode.appendChild(parentNode.children[Math.random() * i | 0]);
   }
-  return arr;
 }
 
 const addMenuClickHandler = () => {
@@ -54,7 +55,6 @@ const addMenuClickHandler = () => {
 }
 
 const addTagClickHandler  = () => {
-  let porfolios = [...document.querySelectorAll('.portfolios__item')]
   let porfoliosContainer = document.querySelector('.portfolios')
   let tags = document.querySelector('.tags')
 
@@ -67,8 +67,7 @@ const addTagClickHandler  = () => {
       let tag = e.target.closest('.tag')
       tag.classList.add('tag_active')
 
-      suffleArr(porfolios)
-      setPortfolios(porfoliosContainer, porfolios)
+      shuffleDomEl(porfoliosContainer)
     }
   })
 }
@@ -84,9 +83,6 @@ const addPortfolioClickHandler = () => {
       document.querySelectorAll('.portfolios__item_active').forEach(x => {
         if (x !== portfolioItem) x.classList.remove('portfolios__item_active')
       })
-
-
-
     }
   })
 
@@ -104,7 +100,7 @@ const addFormClickHandler = () => {
 
       if (name && email) {
         e.preventDefault()
-        let modal = new Modal('ru', {
+        let modal = new Modal('ru', form, {
           subject,
           desc
         })

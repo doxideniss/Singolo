@@ -15,11 +15,12 @@ let language = {
   }
 }
 export class Modal {
-  constructor(lang, data) {
+  constructor(lang, form, data) {
     this.lang = lang
     this.data = data
     this.overlay = ''
     this.modal = ''
+    this.form = form
   }
 
   buildModal() {
@@ -72,6 +73,7 @@ export class Modal {
       return
     }
     if (classes.contains('overlay') || classes.contains('modal__btn')) {
+      this.form.reset()
       this.overlay.remove()
     }
   }
