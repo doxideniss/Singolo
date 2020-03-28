@@ -785,34 +785,7 @@ div.myslider__btn-right {
   }
 }
 
-@media (max-width: 570px) {
-
-  .sliders__item {
-    height: 335px;
-    .phone__horizontal {
-      margin-left: 40px;
-    }
-  }
-
-  .services,
-  .aboutus {
-    .layout-3-col {
-      & > * {
-        flex-basis: 100%;
-      }
-    }
-  }
-  .staffs__item {
-    margin-bottom: 32px;
-  }
-}
-
-@media (max-width: 375px) {
-
-  .container {
-    padding: 0 30px;
-  }
-
+@media (max-width: 600px) {
   .header {
     .header__wrapper {
       height: 65px;
@@ -869,7 +842,36 @@ div.myslider__btn-right {
       display: flex;
     }
   }
+}
 
+@media (max-width: 570px) {
+
+  .sliders__item {
+    height: 335px;
+    .phone__horizontal {
+      margin-left: 40px;
+    }
+  }
+
+  .services,
+  .aboutus {
+    .layout-3-col {
+      & > * {
+        flex-basis: 100%;
+      }
+    }
+  }
+  .staffs__item {
+    margin-bottom: 32px;
+  }
+}
+
+@media (max-width: 375px) {
+
+  .container {
+    padding: 0 30px;
+  }
+  
   .slider {
     .container {
       padding: 0;
