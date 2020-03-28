@@ -1,3 +1,5 @@
+@import "myslider";
+
 * {
   box-sizing: border-box;
 }
@@ -118,31 +120,118 @@ h2 {
 }
 
 .slider{
-  background-color: #f06c64;
   border-bottom: 6px solid #ea676b;
+  background-color: #f06c64;
+  transition: background-color 0.3s;
 }
+
+.slider_colored {
+  background-color: #648BF0;
+}
+
 .slider__wrapper {
   position: relative;
-  padding: 53px 0 58px;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
 }
 
-.slider-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.sliders {
+  overflow: hidden;
 }
 
-.phone-vertical {
-  margin-left: 74px;
+.sliders__item {
+  height: 594px;
 }
 
-.btn-left,
-.btn-right {
+.phone-box {
+  position: relative;
+  width: 100%;
+}
+
+.phone-box_two {
+  .phone:nth-child(1) {
+    top: 53px;
+    left: 73px;
+  }
+  .phone:nth-child(2) {
+    top: 174px;
+    left: auto;
+    right: 72px;
+  }
+}
+
+.phone-box_three {
+  .phone:nth-child(1),
+  .phone:nth-child(3) {
+    width: 156px;
+    top: 152px;
+    left: 213px;
+    opacity: 0.5;
+  }
+  .phone:nth-child(2) {
+    top: 43px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+  }
+  .phone:nth-child(3) {
+    left: auto;
+    right: 213px;
+  }
+}
+
+.phone {
+  position: absolute;
+  top: 0;
+  left: 0;
+  img {
+    width: 100%;
+  }
+}
+
+.phone_off {
+  transition: background-color 0.5s;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 78.5%;
+    height: 68.5%;
+    top: 13.4%;
+    left: 6%;
+    z-index: 2;
+    background-color: #000000;
+  }
+}
+
+.phone__horizontal.phone_off::before  {
+  width: 68.7%;
+  height: 77.4%;
+  top: 5.6%;
+  left: 12.6%;
+}
+
+.phone__btn {
+  padding: 0;
+  margin: 0;
   cursor: pointer;
   position: absolute;
+  left: 36%;
+  bottom: 7.4%;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+}
+
+.phone__horizontal .phone__btn {
+  left: 1.9%;
+  top: 36%;
+}
+
+div.myslider__btn-left,
+div.myslider__btn-right {
+  background-color: transparent;
+  border-radius: 0;
   width: 16px;
   height: 26px;
   top: 49.5%;
@@ -151,17 +240,17 @@ h2 {
   transition: opacity 0.3s;
 }
 
-.btn-left:hover,
-.btn-right:hover {
+div.myslider__btn-left:hover,
+div.myslider__btn-right:hover {
   opacity: 1;
 }
 
-.btn-left {
+div.myslider__btn-left {
   left: 2px;
   background-image: url(../assets/img/slider/main/arrow-left.png);
 }
 
-.btn-right {
+div.myslider__btn-right {
   right: 0;
   background-image: url(../assets/img/slider/main/arrow-right.png);
 }
@@ -404,6 +493,7 @@ h2 {
 }
 
 .quote__form button {
+  cursor: pointer;
   border: none;
   background-color: #d6564f;
   color: #f0d8d9;

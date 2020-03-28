@@ -3,33 +3,59 @@ const path = require("path")
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+
+const optimizator = (isProd) => {
+  const config = {
+    splitChunks: {
+      chunks: 'all'
+    }
+  }
+
+  if (isProd) {
+    config.minimizer = [
+      new OptimizeCssAssetsPlugin(),
+      new TerserPlugin()
+    ]
+  }
+
+  return config
+}
+
+const fileName = (ext, isProd) => isProd ?`[name][hash].${ext}` : `[name].${ext}`
 
 module.exports = (env, options) => {
   const isProd = options.mode === 'production'
 
   const config = {
+    context: path.resolve(__dirname, 'src'),
     mode: isProd ? 'production' : 'development',
     watch: !isProd,
-    entry: ['./src/script.js', './src/sass/style.scss'],
+    entry: ['@babel/polyfill', './script.js', './sass/style.scss'],
     output: {
-      filename: 'script.js',
-      path: path.join(__dirname, '/dist')
+      filename: fileName('js', isProd),
+      path: path.resolve(__dirname, 'dist')
     },
+    optimization: optimizator(isProd),
     devtool: isProd ? 'none': 'source-map',
     plugins: [
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
-        template: 'index.html'
+        template: './index.html',
+        minify: {
+          collapseWhitespace: isProd
+        }
       }),
       new MiniCssExtractPlugin({
-        filename: 'style.css'
+        filename: fileName('css')
       }),
     ],
     module: {
       rules: [
         {
-          test: /\.m?js$/,
-          exclude: /(node_modules|bower_components)/,
+          test: /\.js$/,
+          exclude: /node_modules/,
           use: {
             loader: 'babel-loader',
             options: {
@@ -40,7 +66,13 @@ module.exports = (env, options) => {
         {
           test: /\.s(a|c)ss$/i,
           use: [
-            MiniCssExtractPlugin.loader,
+            {
+              loader: MiniCssExtractPlugin.loader,
+              options: {
+                hmr: !isProd,
+                reloadAll: true
+              }
+            },
             'css-loader',
             'sass-loader',
           ],
@@ -58,6 +90,12 @@ module.exports = (env, options) => {
           loader: 'html-loader',
         },
       ]
+    },
+    devServer: {
+      contentBase: path.join(__dirname, 'dist'),
+      compress: true,
+      hot: !isProd,
+      port: 9000
     }
   }
 

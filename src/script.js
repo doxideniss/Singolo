@@ -1,30 +1,40 @@
 import {Modal} from "./js/Modal";
+import {MySLider} from './js/Slider'
 
 window.onload = () => {
+
+  addSlider()
 
   siteScroll()
 
   addMenuClickHandler()
 
+  addPhoneClickHandler()
+  
   // Portfolio
   addTagClickHandler()
   addPortfolioClickHandler()
 
   // Form send
   addFormClickHandler()
+  
+}
 
+const addSlider = () => {
+  let nodeSlider = document.querySelector('.sliders')
+  let slider = new MySLider(nodeSlider)
+  slider.init()
 }
 
 const siteScroll = () => {
   document.addEventListener('scroll', (e) => {
     let header = document.querySelector('.header__wrapper')
     let curPos = pageYOffset
-    let links = document.querySelectorAll('.nav__link')
 
     curPos > 450 ? header.classList.add('header__wrapper_small') : header.classList.remove('header__wrapper_small')
 
     document.querySelectorAll('[id]').forEach(x => {
-      if (x.offsetTop - x.offsetHeight*0.3 <= curPos && x.offsetTop + x.offsetHeight*0.7 > curPos) {
+      if (x.offsetTop - x.offsetHeight*0.3 < curPos && x.offsetTop + x.offsetHeight*0.7 > curPos) {
         document.querySelector('.nav__item_active').classList.remove('nav__item_active')
         document.querySelector(`[href="#${x.id}"]`).parentElement.classList.add('nav__item_active')
       }
@@ -36,6 +46,19 @@ const shuffleDomEl = (parentNode) => {
   for (let i = parentNode.children.length; i >= 0; i--) {
     parentNode.appendChild(parentNode.children[Math.random() * i | 0]);
   }
+}
+
+const addPhoneClickHandler = () => {
+  let phoneBox = document.querySelector('.sliders')
+  
+  phoneBox.addEventListener('click', (e) => {
+    e.preventDefault()
+    if (e.target.closest('.phone__btn')) {
+      e.target.parentNode.classList.toggle('phone_off')
+    }
+
+  })
+  
 }
 
 const addMenuClickHandler = () => {

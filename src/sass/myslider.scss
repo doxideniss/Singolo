@@ -1,0 +1,78 @@
+.myslider {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.myslider__item {
+  position: relative;
+  display: none;
+  width: 100%;
+  animation: 0.5s ease-in-out;
+}
+
+.myslider__active,
+.myslider__next {
+  display: flex;
+}
+
+.myslider__next {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.myslider__control > div {
+  position: absolute;
+  cursor: pointer;
+  z-index: 5;
+  background-color: #fff;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+  top: 50%;
+  transform: translatey(-50%);
+}
+.left {
+  left: 10px;
+}
+.right {
+  right: 10px;
+}
+
+.to-left {
+  animation-name: left;
+}
+
+.to-right {
+  animation-name: right;
+  animation-direction: reverse;
+}
+
+.from-left {
+  animation-name: left;
+  animation-direction: reverse;
+}
+
+.from-right {
+  animation-name: right;
+}
+
+@keyframes left {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%
+  }
+}
+
+@keyframes right {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0
+  }
+}

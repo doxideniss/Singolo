@@ -6,39 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Singolo</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
-<link href="style.css" rel="stylesheet"></head>
+</head>
 
 <body>
 
 <header id="home" class="header">
-        <div class="header__wrapper container">
-            <div class="header__logo">
-                <h1 class="logo">
-                    <a href="#">SINGOLO<span class="logo__star">*</span></a>
-                </h1>
-            </div>
-            <nav class="nav">
-                <ul class="nav__list">
-                    <li class="nav__item nav__item_active"><a href="#home" class="nav__link">HOME</a></li>
-                    <li class="nav__item"><a href="#services" class="nav__link">SERVICES</a></li>
-                    <li class="nav__item"><a href="#portfolio" class="nav__link">PORTFOLIO</a></li>
-                    <li class="nav__item"><a href="#about" class="nav__link">ABOUT</a></li>
-                    <li class="nav__item"><a href="#contact" class="nav__link">CONTACT</a></li>
-                </ul>
-            </nav>
+    <div class="header__wrapper container">
+        <div class="header__logo">
+            <h1 class="logo">
+                <a href="#">SINGOLO<span class="logo__star">*</span></a>
+            </h1>
         </div>
-    </>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item nav__item_active"><a href="#home" class="nav__link">HOME</a></li>
+                <li class="nav__item"><a href="#services" class="nav__link">SERVICES</a></li>
+                <li class="nav__item"><a href="#portfolio" class="nav__link">PORTFOLIO</a></li>
+                <li class="nav__item"><a href="#about" class="nav__link">ABOUT</a></li>
+                <li class="nav__item"><a href="#contact" class="nav__link">CONTACT</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
 <section class="slider">
     <div class="container">
         <div class="slider__wrapper">
-            <div class="btn-left"></div>
-            <div class="slider-item">
-                <img class="phone-horizontal" src="597ec3f53c394eee48faaf24f30a0998.png" alt="phone">
-                <img class="phone-vertical" src="d1bf7214d3c85e63d614b1aa779e0a49.png" alt="phone">
+            <div class="sliders">
+                <div class="sliders__item">
+                    <div class="phone-box phone-box_two">
+                        <div class="phone phone__vertical">
+                            <img src="./assets/img/slider/1.png" alt="phone">
+                            <button class="phone__btn"></button>
+                        </div>
+                        <div class="phone phone__horizontal">
+                            <img src="./assets/img/slider/2.png" alt="phone">
+                            <button class="phone__btn"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="sliders__item">
+                    <div class="phone-box phone-box_three">
+                        <div class="phone phone__vertical phone_small">
+                            <img src="./assets/img/slider/1.png" alt="phone">
+                            <button class="phone__btn"></button>
+                        </div>
+                        <div class="phone phone__vertical phone_big">
+                            <img src="./assets/img/slider/3.png" alt="phone">
+                            <button class="phone__btn"></button>
+                        </div>
+                        <div class="phone phone__vertical phone_small">
+                            <img src="./assets/img/slider/1.png" alt="phone">
+                            <button class="phone__btn"></button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="btn-right"></div>
         </div>
     </div>
 </section>
@@ -54,7 +77,7 @@
         <div class="layout-3-col">
             <div class="services-item">
                 <div class="services-item__logo">
-                    <img src="04f32f65e475449cd3989e7bb5214417.png" alt="services">
+                    <img src="./assets/img/services/1.png" alt="services">
                 </div>
                 <div class="services-item__content">
                     <h3>Custom Design</h3>
@@ -66,7 +89,7 @@
             </div>
             <div class="services-item">
                 <div class="services-item__logo">
-                    <img src="070eeeb749d575d54331d78d4bd5afe5.png" alt="services">
+                    <img src="./assets/img/services/2.png" alt="services">
                 </div>
                 <div class="services-item__content">
                     <h3>Inovative Ideas</h3>
@@ -77,7 +100,7 @@
             </div>
             <div class="services-item">
                 <div class="services-item__logo">
-                    <img src="78f5a72c69efc563d28697b3f72810df.png" alt="services">
+                    <img src="./assets/img/services/3.png" alt="services">
                 </div>
                 <div class="services-item__content">
                     <h3>Love Is The Answer</h3>
@@ -88,7 +111,7 @@
             </div>
             <div class="services-item">
                 <div class="services-item__logo">
-                    <img src="f829968dae19052b258d6b78d7b13aed.png" alt="services">
+                    <img src="./assets/img/services/4.png" alt="services">
                 </div>
                 <div class="services-item__content">
                     <h3>Responsive Layout</h3>
@@ -98,7 +121,7 @@
             </div>
             <div class="services-item">
                 <div class="services-item__logo">
-                    <img src="17f811ad320aa4dbc82d851a3b9be0bd.png" alt="services">
+                    <img src="./assets/img/services/5.png" alt="services">
                 </div>
                 <div class="services-item__content">
                     <h3>24 / 7 Support</h3>
@@ -109,7 +132,7 @@
             </div>
             <div class="services-item">
                 <div class="services-item__logo">
-                    <img src="cc6cbfd7b966aea0a132598a640d7b7a.png" alt="services">
+                    <img src="./assets/img/services/6.png" alt="services">
                 </div>
                 <div class="services-item__content">
                     <h3>Feel Like A Star</h3>
@@ -133,40 +156,40 @@
         </div>
         <div class="portfolios layout-4-col">
             <div class="portfolios__item">
-                <img src="5667deb1b9deccce1146dd03fbefc9d2.jpg" alt="1">
+                <img src="./assets/img/portfolio/1.jpg" alt="1">
             </div>
             <div class="portfolios__item">
-                <img src="f61c7c71c6e6d04456e39b8b623d6b88.jpg" alt="2">
+                <img src="./assets/img/portfolio/2.jpg" alt="2">
             </div>
             <div class="portfolios__item">
-                <img src="9d9803bf2acbb0a9722ebd0b8897be7d.jpg" alt="3">
+                <img src="./assets/img/portfolio/3.jpg" alt="3">
             </div>
             <div class="portfolios__item">
-                <img src="2b6bce947f96ff089ba731a02b06e4ad.jpg" alt="4">
+                <img src="./assets/img/portfolio/4.jpg" alt="4">
             </div>
             <div class="portfolios__item">
-                <img src="9284d640e82f08e7c0d863b232459450.jpg" alt="5">
+                <img src="./assets/img/portfolio/5.jpg" alt="5">
             </div>
             <div class="portfolios__item">
-                <img src="b189592f4b3085f6c8c31ff03bbc377b.jpg" alt="6">
+                <img src="./assets/img/portfolio/6.jpg" alt="6">
             </div>
             <div class="portfolios__item">
-                <img src="50e334aa8abb8c913343ac759fccb5d4.jpg" alt="7">
+                <img src="./assets/img/portfolio/7.jpg" alt="7">
             </div>
             <div class="portfolios__item">
-                <img src="d92ad232cb1eabc5f163d3838bb0dceb.jpg" alt="8">
+                <img src="./assets/img/portfolio/8.jpg" alt="8">
             </div>
             <div class="portfolios__item">
-                <img src="456c45dce2c4b9732f30546d39e7067b.jpg" alt="9">
+                <img src="./assets/img/portfolio/9.jpg" alt="9">
             </div>
             <div class="portfolios__item">
-                <img src="6f479960809ca3cdd5412f0ccf3b6dcf.jpg" alt="10">
+                <img src="./assets/img/portfolio/10.jpg" alt="10">
             </div>
             <div class="portfolios__item">
-                <img src="5464b9272396040a701a4f0235d41fcd.jpg" alt="11">
+                <img src="./assets/img/portfolio/11.jpg" alt="11">
             </div>
             <div class="portfolios__item">
-                <img src="e841af142cbf8213c05711f02402b942.jpg" alt="12">
+                <img src="./assets/img/portfolio/12.jpg" alt="12">
             </div>
         </div>
     </div>
@@ -180,7 +203,7 @@
         <div class="staffs layout-3-col">
             <div class="staffs__item">
                 <div class="staffs__img">
-                    <img src="bead60db7fecbe90bdd3272b353129f8.jpg" alt="">
+                    <img src="./assets/img/aboutus/1.jpg" alt="">
                 </div>
                 <h3 class="staffs__name">Adam Jensen</h3>
                 <p class="staffs__descr">Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec
@@ -195,7 +218,7 @@
             </div>
             <div class="staffs__item">
                 <div class="staffs__img">
-                    <img src="e3fc44cc070b4f9fc634b2481edbf995.jpg" alt="">
+                    <img src="./assets/img/aboutus/2.jpg" alt="">
                 </div>
                 <h3 class="staffs__name">Desmond Miles</h3>
                 <p class="staffs__descr">Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet,
@@ -210,7 +233,7 @@
             </div>
             <div class="staffs__item">
                 <div class="staffs__img">
-                    <img src="0f6718805842bcccbe682d8c4d4b90be.jpg" alt="">
+                    <img src="./assets/img/aboutus/3.jpg" alt="">
                 </div>
                 <h3 class="staffs__name">Scolara Visari</h3>
                 <p class="staffs__descr">Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat
@@ -281,6 +304,6 @@
     </div>
 </footer>
 
-<script type="text/javascript" src="script.js"></script></body>
+</body>
 
 </html>
