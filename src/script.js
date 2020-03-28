@@ -35,7 +35,9 @@ const siteScroll = () => {
 
     document.querySelectorAll('[id]').forEach(x => {
       if (x.offsetTop - x.offsetHeight*0.3 < curPos && x.offsetTop + x.offsetHeight*0.7 > curPos) {
-        document.querySelector('.nav__item_active').classList.remove('nav__item_active')
+        if  (document.querySelector('.nav__item_active')) {
+          document.querySelector('.nav__item_active').classList.remove('nav__item_active')
+        }
         document.querySelector(`[href="#${x.id}"]`).parentElement.classList.add('nav__item_active')
       }
     })
