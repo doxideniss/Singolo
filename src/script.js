@@ -7,6 +7,8 @@ window.onload = () => {
 
   siteScroll()
 
+  addBurgerMenuClickHandler()
+
   addMenuClickHandler()
 
   addPhoneClickHandler()
@@ -28,10 +30,7 @@ const addSlider = () => {
 
 const siteScroll = () => {
   document.addEventListener('scroll', (e) => {
-    let header = document.querySelector('.header__wrapper')
     let curPos = pageYOffset
-
-    curPos > 450 ? header.classList.add('header__wrapper_small') : header.classList.remove('header__wrapper_small')
 
     document.querySelectorAll('[id]').forEach(x => {
       if (x.offsetTop - x.offsetHeight*0.3 < curPos && x.offsetTop + x.offsetHeight*0.7 > curPos) {
@@ -48,6 +47,31 @@ const shuffleDomEl = (parentNode) => {
   for (let i = parentNode.children.length; i >= 0; i--) {
     parentNode.appendChild(parentNode.children[Math.random() * i | 0]);
   }
+}
+
+const addBurgerMenuClickHandler = () => {
+  let burgerMenu = document.querySelector('.burger-menu')
+  let nav = document.querySelector('.nav')
+  let logo = document.querySelector('.logo')
+
+  burgerMenu.addEventListener('touchend', () => {
+    burgerMenu.classList.toggle('burger-menu_active')
+    nav.classList.toggle('nav_burger')
+    logo.classList.toggle('logo_burger')
+  })
+  
+  nav.addEventListener('touchend', (e) => {
+    if (!nav.classList.contains('nav_burger')) {
+      return
+    }
+
+    if (e.target.classList.contains('nav_burger') || e.target.classList.contains('nav__link')) {
+      burgerMenu.classList.toggle('burger-menu_active')
+      nav.classList.toggle('nav_burger')
+      console.log(e.target)
+    }
+  })
+  
 }
 
 const addPhoneClickHandler = () => {
