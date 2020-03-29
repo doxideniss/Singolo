@@ -68,7 +68,7 @@ const addBurgerMenuClickHandler = () => {
     if (e.target.classList.contains('nav_burger') || e.target.classList.contains('nav__link')) {
       burgerMenu.classList.toggle('burger-menu_active')
       nav.classList.toggle('nav_burger')
-      console.log(e.target)
+      logo.classList.toggle('logo_burger')
     }
   })
   
